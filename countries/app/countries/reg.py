@@ -47,6 +47,17 @@ def regions_api():
     regions = {c.region for c in countries}
     return regions
 
+
+def capitals_api():
+    countries = countries_all()
+    capitals = []
+    for c in countries:
+        if "capital" in c:
+            capitals.append(c.capital)
+        else:
+            continue
+    return capitals
+
 if __name__ == '__main__':
     countries_all()
     c = countries_name('South Georgia')
